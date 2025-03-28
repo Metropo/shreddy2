@@ -97,7 +97,7 @@ Install program files:
    
    sudo cp shreddy2.service /etc/systemd/system/
    sudo cp shreddy2.py shreddy2-partition.sh /usr/local/bin
-   sudo chown root.root /usr/local/bin/shreddy2.py /usr/local/bin/shreddy2-partition.sh /etc/systemd/system/shreddy2.service
+   sudo chown root:root /usr/local/bin/shreddy2.py /usr/local/bin/shreddy2-partition.sh /etc/systemd/system/shreddy2.service
 
 
 Allow Shreddy2 user to run ``/usr/local/bin/shreddy2-partition.sh`` in privileged mode. Therefore, edit ``/etc/sudoers.conf`` by running:
