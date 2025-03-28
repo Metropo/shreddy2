@@ -437,7 +437,12 @@ def monitor_events():
 
                 if (
                     device.properties["ID_TYPE"] == "disk"
-                    and device.properties["ID_USB_DRIVER"] == "usb-storage"
+                    and 
+                    (
+                        device.properties["ID_USB_DRIVER"] == "usb-storage" # Filter for USB-Thumbdrives
+                        or
+                        device.properties["ID_USB_DRIVER"] == "uas"  # Also allow USB-HDDs -> HDD scrub station (USB Attached SCSI (UAS))
+                    )
                 ):
                     print(f"+ Enqueue erase operation for {device.device_node}")
 
